@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: question-generator
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: "AIzaSyB4428jdHMpEAjssd6mOJ1dhgDGf5qnjOs"

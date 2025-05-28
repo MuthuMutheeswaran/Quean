@@ -11,7 +11,8 @@ app.secret_key = 'your_secret_key'
 users = {}  # Format: {username: password}
 
 # Gemini API setup
-genai.configure(api_key="AIzaSyB4428jdHMpEAjssd6mOJ1dhgDGf5qnjOs")
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Download directory
