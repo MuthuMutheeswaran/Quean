@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Question Generator</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">QueAns</div>
+    <div class="auth">
+      <form action="/logout" method="get">
+        <button type="submit" class="logout">Logout</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <h1>AI Question Generator</h1>
+    <p>
+      Welcome, {{ username }}! Generate questions instantly with AI. No extra setup required.
+    </p>
+
+    <form id="quiz-form">
+      <div class="form-grid">
+        <label>
+          Question
+          <select id="question-count">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+          </select>
+        </label>
+
+        <label>
+          Option
+          <select id="option-count">
+            <option>4</option>
+            <option>3</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty Level
+          <select id="difficulty">
+            <option>Easy</option>
+            <option selected>Medium</option>
+            <option>Hard</option>
+          </select>
+        </label>
+      </div>
+
+      <textarea id="topic" placeholder="Enter topic..."></textarea>
+      <button type="submit" id="generate">AI Quiz</button>
+    </form>
+
+    <div id="output"></div>
+    <a id="download-link" class="button" style="display:none; margin-top: 10px;">Download Excel File</a>
+  </main>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
